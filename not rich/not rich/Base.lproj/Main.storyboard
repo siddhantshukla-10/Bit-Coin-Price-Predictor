@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="not_rich" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="EuS-Ta-Ejz">
+                                <rect key="frame" x="145" y="45" width="85" height="29"/>
+                                <segments>
+                                    <segment title="USD"/>
+                                    <segment title="INR"/>
+                                </segments>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7y4-co-GPj">
+                                <rect key="frame" x="113" y="597" width="149" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="GET CURRENT PRICE"/>
+                                <connections>
+                                    <action selector="buttonA:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jux-cW-FoQ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XWW-wk-ESZ">
+                                <rect key="frame" x="140.5" y="489" width="94" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hHf-Qf-qFv" customClass="Chart" customModule="SwiftChart">
+                                <rect key="frame" x="0.0" y="123" width="375" height="266"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="XWW-wk-ESZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7QM-tp-31k"/>
+                            <constraint firstItem="XWW-wk-ESZ" firstAttribute="top" secondItem="hHf-Qf-qFv" secondAttribute="bottom" constant="100" id="DLB-J8-v9T"/>
+                            <constraint firstItem="EuS-Ta-Ejz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Egg-UW-Rjc"/>
+                            <constraint firstItem="hHf-Qf-qFv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Nde-2H-R18"/>
+                            <constraint firstItem="EuS-Ta-Ejz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="TGh-K9-8pF"/>
+                            <constraint firstItem="7y4-co-GPj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UCL-be-PuV"/>
+                            <constraint firstItem="hHf-Qf-qFv" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="eL2-CY-sLJ"/>
+                            <constraint firstItem="hHf-Qf-qFv" firstAttribute="top" secondItem="EuS-Ta-Ejz" secondAttribute="bottom" constant="50" id="jpX-Qg-Zym"/>
+                            <constraint firstItem="7y4-co-GPj" firstAttribute="top" secondItem="XWW-wk-ESZ" secondAttribute="bottom" constant="60" id="qci-wg-UaV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7y4-co-GPj" secondAttribute="bottom" constant="40" id="sSP-MK-RXj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="chartA" destination="hHf-Qf-qFv" id="MFo-qE-D7G"/>
+                        <outlet property="labelA" destination="XWW-wk-ESZ" id="tUB-DH-0iw"/>
+                        <outlet property="segmentA" destination="EuS-Ta-Ejz" id="neB-Nu-FEz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="133.59999999999999" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+</document>

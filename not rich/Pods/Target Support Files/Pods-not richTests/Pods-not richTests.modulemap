@@ -1,0 +1,6 @@
+framework module Pods_not_richTests {
+  umbrella header "Pods-not richTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
